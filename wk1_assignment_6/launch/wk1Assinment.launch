@@ -1,0 +1,21 @@
+<launch>
+	<group ns="followerA">
+		<node pkg="wk1_assignment_6" type="PID_server.py" name="PID_Server" output="screen"></node>
+		<node pkg="wk1_assignment_6" type="followerA.py" name="follower" output="screen"> </node>
+		<node pkg="wk1_assignment_6" type="PID_follow.py" name="PID_follow" output="screen"> </node>
+	</group>
+	<group ns="followerB">
+		<node pkg="wk1_assignment_6" type="PID_server.py" name="PID_Server" output="screen"></node>
+		<node pkg="wk1_assignment_6" type="followerB.py" name="follower" output="screen"> </node>
+		<node pkg="wk1_assignment_6" type="PID_follow.py" name="PID_follow" output="screen"> </node>
+	</group>
+        <group ns="leader">
+		<node pkg="wk1_assignment_6" type="leader.py" name="leader" output="screen"> </node>
+		<node pkg="wk1_assignment_6" type="PID_server.py" name="PID_Server" output="screen"></node>
+		
+	</group>
+	<node pkg="turtlesim" type="turtlesim_node" name="turtle1" output="screen"> </node>
+	
+	
+	
+</launch>
